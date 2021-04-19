@@ -1,0 +1,46 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Hi, I'm Emile.</h1>
+        <p class="lead text-muted">I'm interested in how we perceive, measure and interpret the world around us. I like leveraging Python and Django as tools in that quest. Tech minimalist and sustainability advocate.</p>
+        <p>
+          <a href="mailto:durhamemile@gmail.com" class="btn btn-primary my-2">Email me</a>
+        </p>
+        <img class="rounded" src="{% static 'emile_2020.jpeg' %}" height="300" width="auto">
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for job in jobs %}
+        <div class="col">
+          <div class="card shadow-sm">
+           <img class="card-img-top img-fluid" src="{{ job.image.url }}" width="auto" height="auto">
+            <div class="card-body">
+              <p class="card-text">{{ job.summary }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <a href="https://github.com/emiledurham/djword"><button type="button" class="btn btn-sm btn-outline-secondary">View</button></a>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+                <small class="text-muted">9 mins</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</main>
+{% endblock %}

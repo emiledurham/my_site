@@ -1,0 +1,28 @@
+{% extends 'blog/base.html' %}
+{% block title %}<title>Emile's Blog</title>{% endblock %}
+{% block content %}
+<main>
+
+    <div class="container">
+        <h1 class="text-center pt-3">Emile's Blog</h1>
+        <br>
+        <br>
+        <h2>Latest Posts</h2>
+        <hr>
+        <br>
+        <br>
+
+    {% for blog in blogs %}
+        <a href="{% url 'detail' blog.id %}"><h3>{{ blog.title }}</h3></a>
+        <p>{{ blog.pub_date_pretty }}</p>
+        <img class="rounded img-fluid" src="{{ blog.image.url }}" width="200" height="auto">
+        <br>
+        <br>
+        <p>{{ blog.summary }}</p>
+        <br>
+        <br>
+        <br>
+            {% endfor %}
+    </div>
+</main>
+{% endblock %}
