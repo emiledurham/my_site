@@ -7,5 +7,5 @@ db.sqlite3
 db.sqlite3-journal
 /media
 /static
-/node_modules
+/node_modules/bootstrap-icons
 /package-lock.json
