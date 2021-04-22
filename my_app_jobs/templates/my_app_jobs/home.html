@@ -24,7 +24,7 @@
         {% for job in jobs %}
         <div class="col">
           <div class="card shadow-sm">
-           <a href="https://github.com/emiledurham/djword"><img class="card-img-top img-fluid" src="{{ job.image.url }}" width="auto" height="auto"></a>
+           <a href="{{ job.url }}"><img class="card-img-top img-fluid" src="{{ job.image.url }}" width="auto" height="auto"></a>
             <div class="card-body">
               <p class="card-text">{{ job.summary }}</p>
             </div>
